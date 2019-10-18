@@ -1,0 +1,20 @@
+<div>
+    <ul>
+      <li *ngFor= "let user of users">
+         {{user.id }}<a routerLink= "/user/{{user.id}}"> Clic to see :)</a>
+  
+         {{user.lname}} {{user.fname}} <!--<button (click)="onUpdate(user)">update</button>--> <button (click)="onDelete(user.id)" >delete</button>
+         <!--[(ngModel)]="user"-->
+         
+      </li>
+    </ul>
+  </div>
+
+  <form (submit)="onCreate(fname,lname)" #f="ngForm">
+    <div><input type="text" placeholder="Firstname" name="firstname" required [(ngModel)] = "fname">  <!--[(ngModel)] = "fname"-->
+    <input type="text" placeholder="Lastname" name="lastname" required [(ngModel)] = "lname"></div><!--[(ngModel)] = "lname"-->
+      <br>
+    <button type="submit" [disabled]=f.invalid> Add User</button> <button type="reset"> Reset</button>
+  </form>
+  
+

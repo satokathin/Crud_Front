@@ -1,0 +1,15 @@
+<h1>User's details</h1>
+<!--
+<strong>Firstname</strong> : {{user.fname}} <br>
+<strong>Lastname</strong> : {{user.lname}} -->
+
+
+<form (submit)="onUpdate(user)" #f="ngForm">
+  <div><strong>Firstname</strong> : <input type="text"  name="firstname" [(ngModel)] = "user.fname" required></div>  
+  <div><strong>Lastname</strong> : <input type="text"  name="lastname" [(ngModel)] = "user.lname" required></div>
+    <br>
+  <button type="submit" > Update User</button> <button type="reset"> Reset</button>
+</form>
+
+<!--[(ngModel)] = "fname"  placeholder="Firstname" -->
+<!--[(ngModel)] = "lname" placeholder="Lastname" [disabled]=f.invalid -->
